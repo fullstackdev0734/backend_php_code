@@ -1,0 +1,94 @@
+<div class="container">
+    <br/><br/><br/>
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Weather Forecast</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <form class="form-inline">
+          <div class="form-group">
+            <label>Select a City:</label>&nbsp;
+            <select class="form-control" name="city" #city (change)="fetchData(city)">
+              <optgroup *ngFor = 'let stateCity of citiesAndSates' label="{{stateCity.State}}">
+                <option *ngFor = 'let city of stateCity.Cities' [value]="city">{{city}}</option> 
+              </optgroup>
+            </select>
+          </div>
+        </form><br/>
+      </div>
+      <div class="col-sm-6">
+        <div class="card" *ngIf="apiCallTriggered">
+          <p class="descriptionHeading">{{cityName}} {{countryName}}</p>
+          <p class="descriptionText">{{lastUpdatedTime}}</p>
+          <p class="descriptionText">{{weatherDescription}}</p>
+        </div>
+      </div>
+    </div> 
+    <div class="row" *ngIf="error">
+      <div class="col-sm-12">
+        <div class="alert alert-danger">{{error}}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="card">
+          <h4>Temperature <span class="icon_position temp"><mat-icon>thermostat</mat-icon></span></h4>
+          <hr/>
+          <h2>{{temp}}<span>&#176;</span>C</h2>
+        </div>
+      </div>
+      <div class="col-sm-3 ">
+        <div class="card">
+          <h4>Feels Like <span class="icon_position feels_like"><mat-icon>thermostat_auto</mat-icon></span></h4>
+          <hr/>
+          <h2>{{feelsLike}}<span>&#176;</span>C</h2>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <h4>Min <span class="icon_position min_temp"><mat-icon>thermostat</mat-icon><mat-icon>trending_down</mat-icon></span></h4>
+          <hr/>
+          <h2>{{minTemp}}<span>&#176;</span>C</h2>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <h4>Max <span class="icon_position max_temp"><mat-icon>thermostat</mat-icon><mat-icon>trending_up</mat-icon></span></h4>
+          <hr/>
+          <h2>{{maxTemp}}<span>&#176;</span>C</h2>
+        </div>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="card">
+          <h4>Humidity <span class="icon_position humidity"><mat-icon>water_drop</mat-icon></span></h4>
+          <hr/>
+          <h2>{{humidity}}</h2>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <h4>Wind Speed <span class="icon_position wind_speed"><mat-icon>speed</mat-icon></span></h4>
+          <hr/>
+          <h2>{{windSpeed}}</h2>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <h4>Wind Direction <span class="icon_position wind_direction"><mat-icon>assistant_direction</mat-icon></span></h4>
+          <hr/>
+          <h2>{{deg}}<span>&#176;</span></h2>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <h4>Wind Gust <span class="icon_position wind_gust"><mat-icon>waves</mat-icon></span></h4>
+          <hr/>
+          <h2>{{windGust}}</h2>
+        </div>
+      </div>
+    </div>
+  </div>

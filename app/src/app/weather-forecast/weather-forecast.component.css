@@ -1,0 +1,67 @@
+
+.card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    padding: 5px 15px;
+    margin-bottom: 20px;
+}
+
+.card > h2 {
+    text-align: center;
+}
+
+.card > h4 {
+    margin: 5px;
+}
+
+.card > hr {
+    margin-top: 8px;
+}
+
+.card > h4 > .icon_position {
+    float: right;
+}
+
+.descriptionHeading {
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+.descriptionText {
+    font-size: 16px;
+    margin-bottom: 0px;
+    color: #858484;
+}
+
+.temp {
+    color: #feb020;
+}
+
+.feels_like {
+    color: #f67c50;
+}
+
+.min_temp { 
+    color: #4e85ea;
+}
+
+.max_temp {
+    color: #ff4500;
+}
+
+.humidity {
+    color: #008b8b;
+}
+
+.wind_speed {
+    color: #9acd32
+}
+
+.wind_direction {
+    color: #f03b05;
+}
+
+.wind_gust { 
+    color: #e88c8c;
+}
